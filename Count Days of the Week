@@ -1,0 +1,8 @@
+from datetime import datetime
+from collections import defaultdict
+dates = ["2026-03-10", "2026-03-11", "2026-03-12"]
+groups = defaultdict(int)
+for d in dates:
+    weekday = datetime.strptime(d, "%Y-%m-%d").strftime("%A")
+    groups[weekday] += 1
+print(dict(groups))
